@@ -10,3 +10,7 @@ We modified the handle_connection function to return an HTML response that can b
 
 ## Reflection 3
 
+![Commit 2 screen capture](assets/images/commit2.png)
+
+We improved the server by validating incoming requests and selectively responding with the appropriate content. Instead of always returning hello.html, the server now checks the request path and returns either the correct page or a 404.html error page if the requested resource is not found. This approach mimics real-world web servers that handle different requests dynamically. Refactoring was necessary to separate request handling logic from response construction, making the code more modular and maintainable. This step reinforced the importance of structured request handling in web development.
+
