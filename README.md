@@ -14,3 +14,7 @@ We modified the handle_connection function to return an HTML response that can b
 
 We improved the server by validating incoming requests and selectively responding with the appropriate content. Instead of always returning hello.html, the server now checks the request path and returns either the correct page or a 404.html error page if the requested resource is not found. This approach mimics real-world web servers that handle different requests dynamically. Refactoring was necessary to separate request handling logic from response construction, making the code more modular and maintainable. This step reinforced the importance of structured request handling in web development.
 
+## Reflection 4
+
+We simulated a slow server response to observe the limitations of a single-threaded web server. When handling a request to /sleep, the server intentionally delays its response for 10 seconds using thread::sleep(). During this delay, the server becomes unresponsive to other requests, as it can only process one request at a time. This experiment highlights the inefficiency of single-threaded servers, especially under high traffic, as one slow request can block all others. This reinforces the need for concurrency and motivates the transition to a multithreaded server for improved performance.
+
